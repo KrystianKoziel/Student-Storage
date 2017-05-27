@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Czas generowania: 27 Maj 2017, 22:41
--- Wersja serwera: 10.1.19-MariaDB
--- Wersja PHP: 5.6.28
+-- Czas generowania: 27 Maj 2017, 23:21
+-- Wersja serwera: 10.1.16-MariaDB
+-- Wersja PHP: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -62,7 +62,9 @@ INSERT INTO `elektryczny` (`idprzedmiotu`, `przedmiot`, `kierunek`, `semestr`) V
 (1, 'Języki i Metody Programowania 1', 'Informatyka', 1),
 (2, 'Podstawy Inżynierii Oprogramowania', 'Informatyka', 2),
 (3, 'Algorytmy i Struktury Danych', 'Informatyka', 3),
-(4, 'Języki i Metody Programowania 2', 'Informatyka', 2);
+(4, 'Języki i Metody Programowania 2', 'Informatyka', 2),
+(8, 'Matematyka', 'Informatyka', 2),
+(9, 'Polska Języka - Trudna Języka', 'Informatyka', 2);
 
 -- --------------------------------------------------------
 
@@ -131,7 +133,8 @@ CREATE TABLE `studenci` (
 INSERT INTO `studenci` (`idstudenta`, `imie`, `nazwisko`, `haslo`, `email`, `nr_indeksu`, `wydzial`, `kierunek`, `semestr`) VALUES
 (1, 'Janść', 'Kowalski', ' 040b7cf4a55014e185813e0644502ea9', 'jak.kowalski@gmail.com', 256194, 'Mechatronika', 'Mechatronika', 2),
 (2, 'Mateusz', 'Nowak', '9be00b007ef836db60e642b9e812ab12', 'mateusz.nowak@gmail.com', 280543, 'Elektryczny', 'Informatyka', 1),
-(3, 'jan', 'kowalski', '$2y$10$P1LTGyunhro2LxFs6DZtJukRNIZy/50GYDFPPLBOnAcNsTUTPXhKS', 'marek@gmail.com', 278345, 'elektryczny', 'informatyka', 1);
+(3, 'jan', 'kowalski', '$2y$10$P1LTGyunhro2LxFs6DZtJukRNIZy/50GYDFPPLBOnAcNsTUTPXhKS', 'marek@gmail.com', 278345, 'elektryczny', 'informatyka', 1),
+(4, 'Marek', 'Noworolnik', '$2y$10$pe2oN0xpJhMq2PvnHqDLmet1ycyQfoE2HWSbfi.xrZwQRkzylTGkC', 'marnow955@gmail.com', 269880, 'elektryczny', 'informatyka', 2);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -180,7 +183,7 @@ ALTER TABLE `elektroniki`
 -- AUTO_INCREMENT dla tabeli `elektryczny`
 --
 ALTER TABLE `elektryczny`
-  MODIFY `idprzedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idprzedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT dla tabeli `języki i metody programowania`
 --
@@ -195,7 +198,7 @@ ALTER TABLE `mechatroniki`
 -- AUTO_INCREMENT dla tabeli `studenci`
 --
 ALTER TABLE `studenci`
-  MODIFY `idstudenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idstudenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

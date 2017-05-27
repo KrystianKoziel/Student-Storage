@@ -10,7 +10,7 @@ body{
 	font-family: 'Roboto',serif;
 	padding: 0;
 	margin: 0;
-	background-color: #222E3D;
+	background: #76b852;
 	color: #FFF;
 }
 
@@ -64,7 +64,7 @@ iframe {
 #menu .title {
     font-size: 11px;
     text-transform: uppercase;
-	color: #ABBBCE;
+	color: #FFF;
 	padding: 10px 17px;
 }
 
@@ -89,7 +89,7 @@ iframe {
 }
 
 #menu-content li a:hover {
-	background-color: #2F4156;
+	background: #43A047;
 }
 
 .right {
@@ -104,7 +104,7 @@ iframe {
 .dropdown-content {
     opacity: 0;
     position: absolute;
-    background-color: #587591;
+    background-color: #2F4156;
     max-width: 0;
 	/*margin: -57px 0 0 250px;*/
 	left: 250px;
@@ -120,7 +120,7 @@ iframe {
 }
 
 .dropdown-content a:hover {
-	background-color: #6081A0 !important
+	background-color: #2F4156!important
 }
 
 .dropdown:hover .dropdown-content {
