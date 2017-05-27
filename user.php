@@ -1,6 +1,6 @@
 <?php
   session_start();
-  $idstudenta = 1;
+  $_SESSION['idstudenta'] = 2;
  ?>
 <!DOCTYPE html>
  <html lang="pl">
@@ -17,7 +17,7 @@
      <script type="text/javascript" src="load.js"></script>
    </head>
 
-   <body onload="load(<?php $idstudenta ?>)">
+   <body onload="load(<?php echo $_SESSION['idstudenta'] ?>)">
      <div class="menubar">
        <div class="mbutton" id="upload">Upload</div>
        <div class="mbutton" id="wyloguj">Wyloguj</div>
