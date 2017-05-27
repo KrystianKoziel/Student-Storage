@@ -104,7 +104,7 @@ iframe {
 .dropdown-content {
     opacity: 0;
     position: absolute;
-    background-color: #2F4156;
+    background-color: #43A047;
     max-width: 0;
 	/*margin: -57px 0 0 250px;*/
 	left: 250px;
@@ -120,7 +120,7 @@ iframe {
 }
 
 .dropdown-content a:hover {
-	background-color: #2F4156!important
+	background-color: #76b852 !important
 }
 
 .dropdown:hover .dropdown-content {
@@ -129,7 +129,7 @@ iframe {
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #2F4156;
+    background-color: #43A047;
 }
 
 .dropdown-content a[target='_blank']:after {
