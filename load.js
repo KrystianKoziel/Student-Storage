@@ -34,7 +34,3 @@ function complete(response){
      lista.innerHTML += przedmiot;
    }
 }
-function wyloguj() {
-  var frame = document.getElementById("frame");
- frame.parentNode.removeChild(frame);
-}
