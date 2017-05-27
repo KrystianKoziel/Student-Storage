@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8" />
 	<meta name="Description" content="">
 	<meta name="Keywords" content="pliki  studia ">
 	<meta name="Author" content="Krystian Kozieł">
