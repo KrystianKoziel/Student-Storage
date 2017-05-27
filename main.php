@@ -1,23 +1,24 @@
-<?php
-	session_start();
 
-	if((!isset($_SESSION['logged'])) || ($_SESSION['logged'] != true)){
- 	 header('Location: index.php');
- 	 exit();
-  }
- ?>
+<?php
+   session_start();
+	 $id = $_SESSION['id_studenta'];
+  ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
 	<meta name="Description" content="">
 	<meta name="Keywords" content="pliki  studia ">
 	<meta name="Author" content="Krystian Kozieł">
-	<link rel="stylesheet" href="sidebar.css" type="text/css">
+	<link rel="stylesheet" href="css/sidebar.css" type="text/css">
+	<script type="text/javascript" src="formularz.js"></script>
+	<script type="text/javascript" src="prototype.js"></script>
+	<script type="text/javascript" src="load.js"></script>
 	<title>Pliki pliki pliki</title>
 </head>
 <body>
-<iframe name="main" src="user.php" id="frame"></iframe>
+<iframe name="main" src="user.php"></iframe>
 <div id="content">
 
 
@@ -27,56 +28,88 @@
 				<div class="title">Lista semestrów</div>
 				<ul id="menu-content">
 					<li class="dropdown">
-						<div class="dropdown-content" onload="#">
+						<div class="dropdown-content">
+							<script type="text/javascript">
 
+						id = <?php echo($id) ?>;
+						loadsub(id, 1);
+							</script>
 						</div>
-						<a target="main" class="dropbtn">Sem I</a>
+						<a target="main" class="dropbtn" id ="s1">Sem I</a>
 					</li>
 
 					<li class="dropdown">
             <div class="dropdown-content" onload="#">
+							<script type="text/javascript">
 
+						id = <?php echo($id) ?>;
+						loadsub(id, 2);
+							</script>
 						</div>
 
-						<a target="main" class="dropbtn">Sem II</a>
+						<a target="main" class="dropbtn" id= "s2">Sem II</a>
 
 					</li>
 					<li class="dropdown">
 
 						<div class="dropdown-content" onload="#">
+							<script type="text/javascript">
+
+						id = <?php echo($id) ?>;
+						loadsub(id, 3);
+							</script>
 
 						</div>
-						<a target="main" class="dropbtn">Sem III</a>
+						<a target="main" class="dropbtn" id = "s3">Sem III</a>
 
           </li>
 
 					<li class="dropdown">
 						<div class="dropdown-content" onload="#">
+							<script type="text/javascript">
 
+						id = <?php echo($id) ?>;
+						loadsub(id, 4);
+							</script>
 						</div>
-						<a target="main" class="dropbtn">Sem IV</a>
+						<a target="main" class="dropbtn" id = "s4">Sem IV</a>
 					</li>
 
 					<li class="dropdown">
 						<div class="dropdown-content" onload="#">
+							<script type="text/javascript">
 
+						id = <?php echo($id) ?>;
+						loadsub(id, 5);
+
+							</script>
 						</div>
 
-						<a target="main" class="dropbtn">Sem V</a>
+						<a target="main" class="dropbtn" id = "s5">Sem V</a>
 					</li>
 
 					<li class="dropdown">
             <div class="dropdown-content" onload="#">
 
+							<script type="text/javascript">
+
+						id = <?php echo($id) ?>;
+						loadsub(id, 6);
+							</script>
+
 						</div>
-						<a target="main" class="dropbtn">Sem VI</a>
+						<a target="main" class="dropbtn" id = "s6">Sem VI</a>
 					</li>
 
           <li class="dropdown">
 						<div class="dropdown-content" onload="#">
+							<script type="text/javascript">
 
+						id = <?php echo($id) ?>;
+						loadsub(id, 7)
+							</script>
 						</div>
-						<a target="main" class="dropbtn">Sem VII</a>
+						<a target="main" class="dropbtn" id = "s7">Sem VII</a>
 					</li>
 
 

@@ -18,5 +18,6 @@
     //    $str .= $wiersz['semestr']."\n";
     //  }
      echo rtrim($str);
+
    }
   ?>

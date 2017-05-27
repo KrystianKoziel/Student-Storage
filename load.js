@@ -34,3 +34,26 @@ function complete(response){
      lista.innerHTML += przedmiot;
    }
 }
+function loadsub(id, sem) {
+  var myAjax = new Ajax.Request(
+         'loadsem.php',
+         {
+          method: 'post',
+          asynchronous: true,
+          parameters: "id=" + id + "&" + "sem=" + sem,
+          onComplete: function(response) {
+          retsub(sem, response) ;
+        },
+          onFailure: showAlert
+       });
+}
+function retsub(sem, response){
+  var a = 's'+sem;
+  var lista = document.getElementById(a);
+  var wyniki = response.responseText.split("\n");
+  lista.innerHTML='';
+  for(i=0; i < wyniki.length; i++){
+     var przedmiot = '<a target="main" href="#''">'+ wyniki[i] +'</a> ';
+     lista.innerHTML += przedmiot;
+   }
+}
