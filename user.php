@@ -30,11 +30,11 @@
      <div class="menubar">
        <div class="mbutton" id="upload">Upload</div>
        <div class="mbutton" id="wyloguj"><a target="_top" href="logout.php">Wyloguj</a></div>
-       <div class="mbutton"><a class="checked" href="">Ustawienia</a></div>
+       <div class="mbutton" id="settb">Ustawienia</div>
        <script type="text/javascript">
 
         $(function() {
-            $('.checked').click(function(e) {
+            $('#settb').click(function(e) {
                 e.preventDefault();
                 var dialog = $('<p>Are you sure?</p>').dialog({
                     buttons: {
