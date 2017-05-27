@@ -26,7 +26,6 @@ function showAlert(MyRequest) {
    alert("Operacja nie powiodła się");
 }
 function complete(response){
-  alert(response.responseText);
   var lista = document.getElementById("idlista");
   var wyniki = response.responseText.split("\n");
   lista.innerHTML='';

@@ -20,7 +20,7 @@
    <body onload="load(<?php echo $_SESSION['idstudenta'] ?>)">
      <div class="menubar">
        <div class="mbutton" id="upload">Upload</div>
-       <div class="mbutton" id="wyloguj">Wyloguj</div>
+       <div class="mbutton" id="wyloguj"><a href="logout.php">Wyloguj</a></div>
        <div class="mbutton">Ustawienia</div>
      </div>
      <div class="lista" id="idlista">
