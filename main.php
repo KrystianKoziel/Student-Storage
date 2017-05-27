@@ -1,3 +1,11 @@
+<?php
+	session_start();
+
+	if((!isset($_SESSION['logged'])) || ($_SESSION['logged'] != true)){
+ 	 header('Location: index.php');
+ 	 exit();
+  }
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +16,7 @@
 	<title>Pliki pliki pliki</title>
 </head>
 <body>
-<iframe name="main" src="user.php"></iframe>
+<iframe name="main" src="user.php" id="frame"></iframe>
 <div id="content">
 
 

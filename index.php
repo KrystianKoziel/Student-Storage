@@ -1,9 +1,13 @@
 <?php
 	session_start();
-	
+
 	if((isset($_SESSION['logged'])) && ($_SESSION['logged'] == true)){
 		header('Location: main.php');
 		exit();
+	} else {
+		echo '<script type="text/javascript" src="load.js">',
+     'wyloguj();',
+     '</script>';
 	}
 ?>
 
@@ -11,14 +15,14 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	
+
 	<title>Logowanie</title>
-	
+
 	<meta name="description" content="Twój najlepszy remainder" />
 	<meta name="keywords" content="słowa, kluczowe, wypisane, po, porzecinku" />
-	
+
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
-	
+
 </head>
 <body>
 <div class="login-page">

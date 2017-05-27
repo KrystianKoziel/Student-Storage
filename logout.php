@@ -2,5 +2,8 @@
    session_start();
 
    session_unset();
-   header('Location: index.php');
+   echo '<script type="text/javascript" src="load.js">',
+     'wyloguj();',
+     '</script>';
+   header('Location: main.php');
   ?>
