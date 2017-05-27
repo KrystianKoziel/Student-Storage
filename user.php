@@ -19,21 +19,39 @@
      <link rel="stylesheet" href="css/main.css" type="text/css" />
      <script type="text/javascript" src="prototype.js"></script>
      <script type="text/javascript" src="load.js"></script>
+     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+     <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/base/jquery-ui.css">
+
+
    </head>
 
    <body onload="load(<?php echo $_SESSION['id_studenta'] ?>)">
      <div class="menubar">
        <div class="mbutton" id="upload">Upload</div>
        <div class="mbutton" id="wyloguj"><a target="_top" href="logout.php">Wyloguj</a></div>
-       <div class="mbutton">Ustawienia</div>
+       <div class="mbutton"><a class="checked" href="">Ustawienia</a></div>
+       <script type="text/javascript">
+
+        $(function() {
+            $('.checked').click(function(e) {
+                e.preventDefault();
+                var dialog = $('<p>Are you sure?</p>').dialog({
+                    buttons: {
+                        "Yes": function() {alert('you chose yes');},
+                        "No":  function() {alert('you chose no');},
+                        "Cancel":  function() {
+                            alert('you chose cancel');
+                            dialog.dialog('close');
+                        }
+                    }
+                });
+            });
+        });
+
+    </script>
      </div>
      <div class="lista" id="idlista">
-       <div class="przedmiot">Matematyka</div>
-       <div class="przedmiot">Materiałoznawstwo</div>
-       <div class="przedmiot">Informatyk</div>
-       <div class="przedmiot">Fizyka</div>
-       <div class="przedmiot">Języki i metody programowania</div>
-       <div class="przedmiot">Podstawy Intensywnego Opierdalania</div>
      </div>
    </body>
   </html>
