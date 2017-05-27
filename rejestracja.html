@@ -1,30 +1,55 @@
 
 <html>
 <head>
-	<meta charset="utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
+	
 	<title>Rejestracja</title>
-
+	
 	<meta name="description" content="Twój najlepszy remainder" />
 	<meta name="keywords" content="słowa, kluczowe, wypisane, po, porzecinku" />
-
+	
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
-
+	
 </head>
 <body>
 	<div class="login-page">
 		<div class="form">
-			<form class="register-form" id="rejestracja-form" action="register.py" method="post">
-				<input type="text" placeholder="Imię" name = "name"required/>
-				<input type="text" placeholder="Nazwisko" name = "surname" required/>
-				<input type="email" placeholder="e-mail" name = "email" required/>
-				<input type="password" placeholder="Hasło" name = "password1" required/>
-				<input type="password" placeholder="Powtórz hasło" name = "password2" required/>
+			<form class="register-form" id="rejestracja-form" action="register.php" method="post">
+				<input type="text" placeholder="Imię" name = "name" id="name" required/>
+				<input type="text" placeholder="Nazwisko" name = "surname" id="surname"required/>
+				<input type="email" placeholder="e-mail" name = "email" id="email"required/>
+				<input type="number" placeholder="Numer indeksu" name = "index" id="index" min=111111 max=999999 required/>
+				
+				
+				<select id="wydzial" name="wydzial" onClick = "pokazKierunki()" required>
+						<option value= "" disabled selected> wybierz wydział </option>
+						<option value= "elektryczny"> Elektryczny </option>
+						<option value= "elektroniki"> Elektroniki i Technik Informacyjnych</option>
+						<option value= "mechatroniki"> Mechatroniki</option>
+				</select>	
+				<div id = "kierunek">
+				
+				</div>
+				<select id="semestr" name="semestr" required>
+						<option value= "" disabled selected> Wybierz semestr </option>
+						<option value= "1"> 1 </option>
+						<option value= "2"> 2 </option>
+						<option value= "3"> 3 </option>
+						<option value= "4"> 4 </option>
+						<option value= "5"> 5 </option>
+						<option value= "6"> 6 </option>
+						<option value= "7"> 7 </option>
+				</select>
+
+				
+				<input type="password" placeholder="Hasło" name = "password1" id="password1"required/>
+				<input type="password" placeholder="Powtórz hasło" name = "password2" id="password2" required/>
 				<input type="submit" value="Rejestruj">
 				<p class="message">Masz już konto? <a href="index.html">Zaloguj się</a></p>
 			</form>
 		</div>
 	</div>
+	<script src = "register.js"></script>
 </body>
 </html>
