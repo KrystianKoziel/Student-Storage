@@ -53,7 +53,7 @@ function retsub(sem, response){
   var wyniki = response.responseText.split("\n");
   lista.innerHTML='';
   for(i=0; i < wyniki.length; i++){
-     var przedmiot = '<a target="main" href="#''">'+ wyniki[i] +'</a> ';
+     var przedmiot = '<a target="main" href="#">'+ wyniki[i] +'</a> ';
      lista.innerHTML += przedmiot;
    }
 }
