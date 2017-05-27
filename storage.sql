@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Czas generowania: 27 Maj 2017, 14:42
+-- Czas generowania: 27 Maj 2017, 15:15
 -- Wersja serwera: 10.1.19-MariaDB
 -- Wersja PHP: 5.6.28
 
@@ -32,6 +32,16 @@ CREATE TABLE `elektryczny` (
   `kierunek` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
   `semestr` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Zrzut danych tabeli `elektryczny`
+--
+
+INSERT INTO `elektryczny` (`idprzedmiotu`, `przedmiot`, `kierunek`, `semestr`) VALUES
+(1, 'Języki i Metody Programowania 1', 'Informatyka', 1),
+(2, 'Podstawy Inżynierii Oprogramowania', 'Informatyka', 2),
+(3, 'Algorytmy i Struktury Danych', 'Informatyka', 3),
+(4, 'Języki i Metody Programowania 2', 'Informatyka', 2);
 
 -- --------------------------------------------------------
 
@@ -71,6 +81,14 @@ CREATE TABLE `wydział elektroniki i technik informacyjnych` (
   `semestr` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Zrzut danych tabeli `wydział elektroniki i technik informacyjnych`
+--
+
+INSERT INTO `wydział elektroniki i technik informacyjnych` (`idprzedmiotu`, `przedmiot`, `kierunek`, `semestr`) VALUES
+(1, 'Podstawy Pomiarów', 'Telekomunikacja', 2),
+(2, 'Teoria Obwodów', 'Elektronika', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -80,9 +98,17 @@ CREATE TABLE `wydział elektroniki i technik informacyjnych` (
 CREATE TABLE `wydział mechatroniki` (
   `idprzedmiotu` int(11) NOT NULL,
   `przedmiot` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `wydzial` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `kierunek` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
   `semestr` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Zrzut danych tabeli `wydział mechatroniki`
+--
+
+INSERT INTO `wydział mechatroniki` (`idprzedmiotu`, `przedmiot`, `kierunek`, `semestr`) VALUES
+(1, 'Fizyka 1', 'Mechatronika', 1),
+(2, 'Podstawy Automatyki', 'Automatyka i Robotyka', 2);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -120,7 +146,7 @@ ALTER TABLE `wydział mechatroniki`
 -- AUTO_INCREMENT dla tabeli `elektryczny`
 --
 ALTER TABLE `elektryczny`
-  MODIFY `idprzedmiotu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idprzedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT dla tabeli `studenci`
 --
@@ -130,12 +156,12 @@ ALTER TABLE `studenci`
 -- AUTO_INCREMENT dla tabeli `wydział elektroniki i technik informacyjnych`
 --
 ALTER TABLE `wydział elektroniki i technik informacyjnych`
-  MODIFY `idprzedmiotu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idprzedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT dla tabeli `wydział mechatroniki`
 --
 ALTER TABLE `wydział mechatroniki`
-  MODIFY `idprzedmiotu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idprzedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
