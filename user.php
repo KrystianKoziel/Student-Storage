@@ -1,3 +1,7 @@
+<?php
+  session_start();
+  $idstudenta = 1;
+ ?>
 <!DOCTYPE html>
  <html lang="pl">
    <head>
@@ -9,9 +13,11 @@
      <meta name="keywords" content="student, storage" />
 
      <link rel="stylesheet" href="css/main.css" type="text/css" />
+     <script type="text/javascript" src="prototype.js"></script>
+     <script type="text/javascript" src="load.js"></script>
    </head>
 
-   <body>
+   <body onload="load(<?php $idstudenta ?>)">
      <div class="menubar">
        <div class="mbutton" id="upload">Upload</div>
        <div class="mbutton" id="wyloguj">Wyloguj</div>
