@@ -8,11 +8,11 @@
 	<title>Pliki pliki pliki</title>
 </head>
 <body>
-
+<iframe name="main" src="user.php"></iframe>
 <div id="content">
-	<iframe name="main" src="user.php"></iframe>
 
-		<div id="sidebar">
+
+
 
 			<div id="menu">
 				<div class="title">Lista semestrów</div>
