@@ -8,3 +8,44 @@
   font-family: "Roboto", sans-serif;
   /*float: left;*/
 }
+
+.lista{
+  padding: 20px;
+  margin: 30px;
+}
+.przedmiot{
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #D3D3D3;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+}
+.przedmiot:hover, .mbutton:hover{
+  background-color: #EEE;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+}
+.przedmiot:active, .mbutton:active{
+  background-color: #DDD;
+  box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+}
+.mbutton{
+  float: right;
+  display: inline;
+  padding: 5px;
+  text-align: center;
+  margin: 5px;
+  border: 1px solid #D3D3D3;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+}
+.menubar{
+  display: inline;
+  margin: 55px;
+}
+#upload{
+  float: left;
+  margin-left: 60px;
+}
+#wyloguj{
+  margin-right: 60px;
+}
