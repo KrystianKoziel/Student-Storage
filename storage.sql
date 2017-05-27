@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Czas generowania: 27 Maj 2017, 16:22
+-- Czas generowania: 27 Maj 2017, 22:41
 -- Wersja serwera: 10.1.19-MariaDB
 -- Wersja PHP: 5.6.28
 
@@ -23,15 +23,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `elektroniki`
+--
+
+CREATE TABLE `elektroniki` (
+  `idprzedmiotu` int(11) NOT NULL,
+  `przedmiot` text COLLATE utf8_polish_ci NOT NULL,
+  `kierunek` text COLLATE utf8_polish_ci NOT NULL,
+  `semestr` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `elektroniki`
+--
+
+INSERT INTO `elektroniki` (`idprzedmiotu`, `przedmiot`, `kierunek`, `semestr`) VALUES
+(1, 'Podstawy Pomiarów', 'Telekomunikacja', 2),
+(2, 'Teoria Obwodów', 'Elektronika', 3);
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `elektryczny`
 --
 
 CREATE TABLE `elektryczny` (
   `idprzedmiotu` int(11) NOT NULL,
-  `przedmiot` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `kierunek` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `przedmiot` text COLLATE utf8_polish_ci NOT NULL,
+  `kierunek` text COLLATE utf8_polish_ci NOT NULL,
   `semestr` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `elektryczny`
@@ -46,79 +67,98 @@ INSERT INTO `elektryczny` (`idprzedmiotu`, `przedmiot`, `kierunek`, `semestr`) V
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `języki i metody programowania`
+--
+
+CREATE TABLE `języki i metody programowania` (
+  `id_przedmiotu` int(11) NOT NULL,
+  `nazwa_pliku` text COLLATE utf8_polish_ci NOT NULL,
+  `autor` text COLLATE utf8_polish_ci NOT NULL,
+  `ocena_przydatnosci` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `języki i metody programowania`
+--
+
+INSERT INTO `języki i metody programowania` (`id_przedmiotu`, `nazwa_pliku`, `autor`, `ocena_przydatnosci`) VALUES
+(1, 'Notatki z wykladu', 'Jan', 4),
+(2, 'programy z wykladu', 'Mariusz', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `mechatroniki`
+--
+
+CREATE TABLE `mechatroniki` (
+  `idprzedmiotu` int(11) NOT NULL,
+  `przedmiot` text COLLATE utf8_polish_ci NOT NULL,
+  `kierunek` text COLLATE utf8_polish_ci NOT NULL,
+  `semestr` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `mechatroniki`
+--
+
+INSERT INTO `mechatroniki` (`idprzedmiotu`, `przedmiot`, `kierunek`, `semestr`) VALUES
+(1, 'Fizyka 1', 'Mechatronika', 1),
+(2, 'Podstawy Automatyki', 'Automatyka i Robotyka', 2);
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `studenci`
 --
 
 CREATE TABLE `studenci` (
   `idstudenta` int(11) NOT NULL,
-  `imie` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `nazwisko` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `haslo` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `email` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `imie` text COLLATE utf8_polish_ci NOT NULL,
+  `nazwisko` text COLLATE utf8_polish_ci NOT NULL,
+  `haslo` text COLLATE utf8_polish_ci NOT NULL,
+  `email` text COLLATE utf8_polish_ci NOT NULL,
   `nr_indeksu` int(11) NOT NULL,
-  `wydzial` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `kierunek` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `wydzial` text COLLATE utf8_polish_ci NOT NULL,
+  `kierunek` text COLLATE utf8_polish_ci NOT NULL,
   `semestr` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `studenci`
 --
 
 INSERT INTO `studenci` (`idstudenta`, `imie`, `nazwisko`, `haslo`, `email`, `nr_indeksu`, `wydzial`, `kierunek`, `semestr`) VALUES
-(1, 'Jan', 'Kowalski', ' 040b7cf4a55014e185813e0644502ea9', 'jak.kowalski@gmail.com', 256194, 'Mechatronika', 'Maechatronika', 2),
-(2, 'Mateusz', 'Nowak', '9be00b007ef836db60e642b9e812ab12', 'mateusz.nowak@gmail.com', 280543, 'Elektryczny', 'Informatyka', 1);
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `wydział elektroniki i technik informacyjnych`
---
-
-CREATE TABLE `wydział elektroniki i technik informacyjnych` (
-  `idprzedmiotu` int(11) NOT NULL,
-  `przedmiot` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `kierunek` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `semestr` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Zrzut danych tabeli `wydział elektroniki i technik informacyjnych`
---
-
-INSERT INTO `wydział elektroniki i technik informacyjnych` (`idprzedmiotu`, `przedmiot`, `kierunek`, `semestr`) VALUES
-(1, 'Podstawy Pomiarów', 'Telekomunikacja', 2),
-(2, 'Teoria Obwodów', 'Elektronika', 3);
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `wydział mechatroniki`
---
-
-CREATE TABLE `wydział mechatroniki` (
-  `idprzedmiotu` int(11) NOT NULL,
-  `przedmiot` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `kierunek` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
-  `semestr` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Zrzut danych tabeli `wydział mechatroniki`
---
-
-INSERT INTO `wydział mechatroniki` (`idprzedmiotu`, `przedmiot`, `kierunek`, `semestr`) VALUES
-(1, 'Fizyka 1', 'Mechatronika', 1),
-(2, 'Podstawy Automatyki', 'Automatyka i Robotyka', 2);
+(1, 'Janść', 'Kowalski', ' 040b7cf4a55014e185813e0644502ea9', 'jak.kowalski@gmail.com', 256194, 'Mechatronika', 'Mechatronika', 2),
+(2, 'Mateusz', 'Nowak', '9be00b007ef836db60e642b9e812ab12', 'mateusz.nowak@gmail.com', 280543, 'Elektryczny', 'Informatyka', 1),
+(3, 'jan', 'kowalski', '$2y$10$P1LTGyunhro2LxFs6DZtJukRNIZy/50GYDFPPLBOnAcNsTUTPXhKS', 'marek@gmail.com', 278345, 'elektryczny', 'informatyka', 1);
 
 --
 -- Indeksy dla zrzutów tabel
 --
 
 --
+-- Indexes for table `elektroniki`
+--
+ALTER TABLE `elektroniki`
+  ADD PRIMARY KEY (`idprzedmiotu`);
+
+--
 -- Indexes for table `elektryczny`
 --
 ALTER TABLE `elektryczny`
+  ADD PRIMARY KEY (`idprzedmiotu`);
+
+--
+-- Indexes for table `języki i metody programowania`
+--
+ALTER TABLE `języki i metody programowania`
+  ADD PRIMARY KEY (`id_przedmiotu`);
+
+--
+-- Indexes for table `mechatroniki`
+--
+ALTER TABLE `mechatroniki`
   ADD PRIMARY KEY (`idprzedmiotu`);
 
 --
@@ -128,41 +168,34 @@ ALTER TABLE `studenci`
   ADD PRIMARY KEY (`idstudenta`);
 
 --
--- Indexes for table `wydział elektroniki i technik informacyjnych`
---
-ALTER TABLE `wydział elektroniki i technik informacyjnych`
-  ADD PRIMARY KEY (`idprzedmiotu`);
-
---
--- Indexes for table `wydział mechatroniki`
---
-ALTER TABLE `wydział mechatroniki`
-  ADD PRIMARY KEY (`idprzedmiotu`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT dla tabeli `elektroniki`
+--
+ALTER TABLE `elektroniki`
+  MODIFY `idprzedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT dla tabeli `elektryczny`
 --
 ALTER TABLE `elektryczny`
   MODIFY `idprzedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
+-- AUTO_INCREMENT dla tabeli `języki i metody programowania`
+--
+ALTER TABLE `języki i metody programowania`
+  MODIFY `id_przedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT dla tabeli `mechatroniki`
+--
+ALTER TABLE `mechatroniki`
+  MODIFY `idprzedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT dla tabeli `studenci`
 --
 ALTER TABLE `studenci`
-  MODIFY `idstudenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT dla tabeli `wydział elektroniki i technik informacyjnych`
---
-ALTER TABLE `wydział elektroniki i technik informacyjnych`
-  MODIFY `idprzedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT dla tabeli `wydział mechatroniki`
---
-ALTER TABLE `wydział mechatroniki`
-  MODIFY `idprzedmiotu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idstudenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
