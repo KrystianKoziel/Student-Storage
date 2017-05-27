@@ -23,7 +23,7 @@
        <div class="mbutton" id="wyloguj">Wyloguj</div>
        <div class="mbutton">Ustawienia</div>
      </div>
-     <div class="lista">
+     <div class="lista" id="idlista">
        <div class="przedmiot">Matematyka</div>
        <div class="przedmiot">Materiałoznawstwo</div>
        <div class="przedmiot">Informatyk</div>

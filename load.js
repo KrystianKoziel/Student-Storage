@@ -27,4 +27,11 @@ function showAlert(MyRequest) {
 }
 function complete(response){
   alert(response.responseText);
+  var lista = document.getElementById("idlista");
+  var wyniki = response.responseText.split("\n");
+  lista.innerHTML='';
+  for(i=0; i < wyniki.length; i++){
+     var przedmiot = '<div class="przedmiot" onclick="#" >'+ wyniki[i] + '</div>';
+     lista.innerHTML += przedmiot;
+   }
 }
