@@ -3,7 +3,7 @@ function load(id) {
          'getusersem.php',
          {
           method: 'post',
-          asynchronous: false,
+          asynchronous: true,
           parameters: "id=" + id,
           onComplete: function(response) {
             loadsem(id,response);
@@ -56,4 +56,21 @@ function retsub(sem, response){
      var przedmiot = '<a target="main" href="#">'+ wyniki[i] +'</a> ';
      lista.innerHTML += przedmiot;
    }
+}
+var semestrres = 0;
+function getSemestr(id) {
+  var myAjax = new Ajax.Request(
+         'getusersem.php',
+         {
+          method: 'post',
+          asynchronous: false,
+          parameters: "id=" + id,
+          onComplete: function(response) {
+            semestrres = response.responseText;
+          },
+          onFailure: showAlert
+       });
+}
+function getsemres() {
+  return semestrres;
 }

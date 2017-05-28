@@ -36,15 +36,60 @@
         $(function() {
             $('#settb').click(function(e) {
                 e.preventDefault();
-                var dialog = $('<p>Are you sure?</p>').dialog({
+                getSemestr(<?php echo $_SESSION['id_studenta'] ?>);
+                var gsem = getsemres();
+                var sett = '<form id="settform" action="settings.php" method="post">'
+                +'Semestr:'
+                +'<input type="hidden" value="'+gsem+'"id="gsem" name="gsem"/> '
+                +'<select id="semestr" name="semestr" required>'
+        						+'<option value= "1"';
+                    if(gsem==1)
+                      sett+=' selected';
+                    sett+='> 1 </option>'
+        						+'<option value= "2"';
+                    if (gsem==2) {
+                      sett+=' selected';
+                    }
+                    sett+='> 2 </option>'
+        						+'<option value= "3"';
+                    if (gsem==3) {
+                      sett+=' selected';
+                    }
+                    sett+='> 3 </option>'
+        						+'<option value= "4"';
+                    if (gsem==4) {
+                      sett+=' selected';
+                    }
+                    sett+='> 4 </option>'
+        						+'<option value= "5"';
+                    if (gsem==5) {
+                      sett+=' selected';
+                    }
+                    sett+='> 5 </option>'
+        						+'<option value= "6"';
+                    if (gsem==6) {
+                      sett+=' selected';
+                    }
+                    sett+='> 6 </option>'
+        						+'<option value= "7"';
+                    if (gsem==7) {
+                      sett+=' selected';
+                    }
+                    sett+='> 7 </option>'
+        				+'</select>'
+                +'<input type="password" placeholder="Nowe hasło" name="newpass1" id="newpass1"/>'
+                +'<input type="password" placeholder="Powtórz hasło" name="newpass2" id="newpass2"/>'
+                +'</form>';
+                var dialog = $(sett).dialog({
                     buttons: {
-                        "Yes": function() {alert('you chose yes');},
-                        "No":  function() {alert('you chose no');},
+                        "Yes": function() {
+                          document.getElementById("settform").submit();
+                        },
                         "Cancel":  function() {
-                            alert('you chose cancel');
                             dialog.dialog('close');
                         }
-                    }
+                    },
+                    modal: true
                 });
             });
         });
