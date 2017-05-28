@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.logo{
+  width: 80px;
+  height: 50px;
+  margin-bottom: 20px;
+  display: inline;
+  font-family: "Roboto", sans-serif;
+  /*float: left;*/
+}
+
+.lista{
+  padding: 20px;
+  margin: 30px;
+  /*border: 1px solid #D3D3D3;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);*/
+
+}
+.przedmiot{
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #D3D3D3;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+}
+.przedmiot:hover, .mbutton:hover{
+  background-color: #EEE;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+}
+.przedmiot:active, .mbutton:active{
+  background-color: #DDD;
+  box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+}
+.mbutton{
+  float: right;
+  display: inline;
+  padding: 5px;
+  text-align: center;
+  margin: 5px;
+  border: 1px solid #D3D3D3;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+}
+.menubar{
+  display: inline;
+  margin: 55px;
+  /*border-bottom: 1px solid #D3D3D3;*/
+}
+.dbutton{
+  float: left;
+  display: inline;
+  padding: 5px;
+  text-align: center;
+  margin: 5px;
+  border: 1px solid #D3D3D3;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+}
+#upload{
+  float: left;
+  margin-left: 60px;
+}
+#wyloguj{
+  margin-right: 60px;
+}
+.separator{
+  width: 100%;
+  border: 1px solid #D3D3D3;
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+#down1{
+	 width: 60px;  height: 18px;
+  float: left;
+  margin-left: 60px;
+}
+#down2{
+  float: left;
+}
+tr, td {
+	padding: 5px 5px;
+}
+h1{
+	margin-left:50px;
+	
+}
+table {
+		margin-left:50px;
+	padding:30px;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 70%;
+	text-align: center;
+}
+td:first-child {
+
+	width: 40px;
+	min-width: 40px;
+}
+tr:first-child {
+	background: #DDD !important;
+}
+td:nth-child(3), td:nth-child(4) {
+	width: 200px;
+	min-width: 200px;
+}
