@@ -42,19 +42,32 @@ function loadsub(id, sem) {
           asynchronous: true,
           parameters: "id=" + id + "&" + "sem=" + sem,
           onComplete: function(response) {
-          retsub(sem, response) ;
+          retsub(id, sem, response) ;
         },
           onFailure: showAlert
        });
 }
-function retsub(sem, response){
+function loadPliki(id, sem, przedmiot) {
+    var myAjax = new Ajax.Request(
+          'loadplik.php',
+           {
+            method: 'post',
+           asynchronous: true,
+           parameters: "id=" + id + "&" + "sem=" + sem,
+            onComplete: function(response) {
+           retPlik( sem, response, przedmiot) ;
+         },
+            onFailure: showAlert
+         });
+}
+function retsub(id, sem, response){
   var a = 's'+sem;
   var lista = document.getElementById(a);
   var wyniki = response.responseText.split("\n");
   lista.innerHTML='';
   for(i=0; i < wyniki.length; i++){
-     var przedmiot = '<a target="main" href="#">'+ wyniki[i] +'</a> ';
-     lista.innerHTML += przedmiot;
+    var przedmiot = '<a target="main" href="przedmiot.php" onclick="loadPliki('+id+', '+sem+ ','  +wyniki[i] + ')" >' + wyniki[i] +'</a> ';
+      lista.innerHTML += przedmiot;
    }
 }
 var semestrres = 0;
@@ -78,3 +91,28 @@ function upload(){
 		var input = document.getElementById("filesToUpload");
 		input.click();
 }
+function retPlik(sem, response, przedmiot) {
+       var s = response.responseText.split("\n");
+       var a ='pliki/'+ s[0]+'/'+s[1]+'/'+sem+'/'+przedmiot;
+       var table = document.getElementById("idlista");
+       var string = "<table><td><tr>Nazwa pliku</tr><tr>Rozmiar</tr><tr>Typ</tr></td>";
+       string += `
+       <?php
+ 	     $dir = "`;
+       string += a;
+        string += ` $files = scandir($dir);
+ 	       foreach ($files as $file)
+ 	        {
+ 		          if (!in_array($file,array(".","..")))
+ 		            {
+ 			               $size = filesize($dir.'/'.$file);
+ 			                  $size = round($size / 1024);
+ 			                     $exten = pathinfo($file);
+ 			                        echo "<tr><td><a href='download.php?file=".$file."'>".$exten['filename']."</a></td><td>".$size."KB</td><td>".$exten['extension']."</td>	</tr>"";
+ 		            }
+ 	        }
+       ?>
+       `;
+       string += "</table>";
+       table.innerHTML = string;
+  }
