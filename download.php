@@ -43,13 +43,13 @@
                  $licznik = 1;
                  foreach ($pliki as $plik) {
                    if ($plik!='.' && $plik!='..') {
-                     $info = pathinfo($plik);
+                     $exten = pathinfo($plik);
                      $size = filesize($katalog.'/'.$plik);
-                     echo '<tr><td><input type="checkbox"></td><td><a href="download.php?plik='.$plik.'">'.$info['filename'].'</a></td><td>'.$info['extension'].'</td><td>'.$size.'B</td></tr>';
+                     echo "<tr><td><input type='checkbox'></td><td><a href='pobierz.php?file=".$plik."'>".$exten['filename']."</a></td><td>".$size."KB</td><td>".$exten['extension']."</td></tr>";
                      $licznik++;
                    }
                  }
-                ?>
+                ?>		
 		</table>
 	  
 	  </div>
