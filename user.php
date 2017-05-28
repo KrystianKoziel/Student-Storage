@@ -87,10 +87,10 @@
                 +'</form>';
                 var dialog = $(sett).dialog({
                     buttons: {
-                        "Yes": function() {
+                        "Zapisz": function() {
                           document.getElementById("settform").submit();
                         },
-                        "Cancel":  function() {
+                        "Anuluj":  function() {
                             dialog.dialog('close');
                         }
                     },
