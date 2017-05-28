@@ -83,7 +83,7 @@ tr, td {
 }
 h1{
 	margin-left:50px;
-	
+
 }
 table {
 		margin-left:50px;
@@ -104,4 +104,28 @@ tr:first-child {
 td:nth-child(3), td:nth-child(4) {
 	width: 200px;
 	min-width: 200px;
+}
+input{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 0;
+}
+select {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 0;
 }
