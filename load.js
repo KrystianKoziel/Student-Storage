@@ -74,3 +74,7 @@ function getSemestr(id) {
 function getsemres() {
   return semestrres;
 }
+function upload(){
+		var input = document.getElementById("filesToUpload");
+		input.click();
+}

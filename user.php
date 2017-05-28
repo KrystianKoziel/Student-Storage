@@ -28,7 +28,12 @@
 
    <body onload="load(<?php echo $_SESSION['id_studenta'] ?>)">
      <div class="menubar">
-       <div class="mbutton" id="upload">Upload</div>
+       <div class="mbutton" id="upload" onclick="upload()">
+			<form action = "upload.php" method = "post">
+			Upload
+			<input type="file" multiple name="fileToUpload[]" onchange="this.form.submit()" id="filesToUpload"   style="display: none;">
+			 </form>
+		  </div>
        <div class="mbutton" id="wyloguj"><a target="_top" href="logout.php">Wyloguj</a></div>
        <div class="mbutton" id="settb">Ustawienia</div>
        <script type="text/javascript">
